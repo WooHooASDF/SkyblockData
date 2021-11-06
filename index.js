@@ -33,7 +33,7 @@ async function getData() {
         try {
             await (await fs).stat(path);
         } catch {
-            console.log('Does nto exist, so writing: ' + key)
+            console.log('Does not exist, so writing: ' + key)
             await (await fs).writeFile(path, '')
         }
 

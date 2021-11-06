@@ -7,6 +7,7 @@ async function loadImports() {
 
 const {apiKey, refreshDelay} = require('./config.js');
 
+
 async function getData() {
     const imports = await loadImports();
     const { fetch, fs } = await imports;
@@ -43,8 +44,13 @@ async function getData() {
 
         await (await fs).appendFile(path, toWrite);
     }
-
-    setTimeout(getData, refreshDelay);
+    console.log('Done getting and writing data')
+    
 }
+console.log(refreshDelay);
 
 getData();
+setInterval(() => {
+    console.log('starting next batch');
+    getData()
+}, refreshDelay)

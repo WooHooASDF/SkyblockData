@@ -5,7 +5,7 @@ async function loadImports() {
     return { fetch, fs }
 }
 
-const {apiKey} = require('config.js');
+const {apiKey, refreshDelay} = require('config.js');
 
 async function getData() {
     const imports = await loadImports();
@@ -44,6 +44,7 @@ async function getData() {
         await (await fs).appendFile(path, toWrite);
     }
 
-    setTimeout(getData, 120000);
+    setTimeout(getData, refreshDelay);
 }
+
 getData();

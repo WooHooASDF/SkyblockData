@@ -40,16 +40,16 @@ async function getData() {
 
         // write the current prices to the file along with a timestamp - the number of ms
         const product = products[okey].quick_status;
-        const toWrite = `${Date.now()}-${product.sellPrice}-${product.sellVolume}-${product.sellMovingWeek}-${product.sellOrders}-${product.buyPrice}-${product.buyVolume}-${product.buyMovingWeek}-${product.buyOrders}\n`
+        const toWrite = `${Math.floor(Date.now()/1000/60)}-${product.sellPrice}-${product.sellVolume}-${product.sellMovingWeek}-${product.sellOrders}-${product.buyPrice}-${product.buyVolume}-${product.buyMovingWeek}-${product.buyOrders}\n`
 
         await (await fs).appendFile(path, toWrite);
     }
     console.log('Done getting and writing data')
     
 }
-console.log(refreshDelay);
 
 getData();
+
 setInterval(() => {
     console.log('starting next batch');
     getData()

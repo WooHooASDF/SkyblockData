@@ -5,7 +5,7 @@ async function loadImports() {
     return { fetch, fs }
 }
 
-const {apiKey, refreshDelay} = require('./config.js');
+const {apiKey, refreshDelay} = require('./config.json');
 
 
 async function getData() {

@@ -8,8 +8,10 @@ Run ```npm install``` to install dependencies.
 
 Create a config.js file with the following parameters:
 ```js
-const apiKey = '' // Your api key here
-const refreshDelay = 12000 // The refresh delay in ms
+{
+  apiKey: '' // Your api key here
+  refreshDelay: 12000 // The refresh delay in ms
+}
 ```
 
 Run the project using ```npm run```.

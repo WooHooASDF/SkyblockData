@@ -6,7 +6,7 @@ Clone this repository.
 
 Run ```npm install``` to install dependencies.
 
-Create a config.js file with the following parameters:
+Create a config.json file with the following parameters:
 ```js
 {
   apiKey: '' // Your api key here

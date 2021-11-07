@@ -1,2 +1,0 @@
-const apiKey = '' // Your api key here
-const refreshDelay = 12000 refresh delay in ms here

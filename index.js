@@ -12,17 +12,9 @@ async function getData() {
     const imports = await loadImports();
     const { fetch, fs } = await imports;
 
-    async function get(endpoint, args) {
-
-        let url = 'https://api.hypixel.net/' + endpoint + `?key=${apiKey}`
-        for (let key in args) { url += `&${key}=${args[key]}` }
-
-        const request = await ( await fetch ).default(url);
-        return request.json()
-    }
 
     // products currently
-    const {products} = await get("skyblock/bazaar");
+    const {products} = await (await fetch)('https://api.hypixel.net/skyblock/bazaar');
 
 
     for (let okey of Object.keys(products)) {
